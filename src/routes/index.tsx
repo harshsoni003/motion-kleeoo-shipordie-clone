@@ -33,6 +33,9 @@ const tweets = [
   { name: "Jesse", handle: "@heyfuturejesse", text: "I've lurked the build in public world for far too long. I'm going to ship a product in 30 days or die trying. Yarrr 🏴‍☠️", date: "May 27, 2026" },
   { name: "katalystkat", handle: "@katalyst_katt", text: "help i'm on a ship and i refuse to die", date: "May 26, 2026" },
   { name: "Jessyka Boatright", handle: "@jessyka_boat", text: "I joined!!!!", date: "May 26, 2026" },
+  { name: "vieren", handle: "@richvieren", text: "Replying to @daicandev — let's cook!!", date: "May 26, 2026" },
+  { name: "Aiden", handle: "@aidenbuilds", text: "Locked in. 30 days. Either I ship or I'm walking the plank 🏴‍☠️", date: "May 28, 2026" },
+  { name: "Marisa", handle: "@marisamakes", text: "Joined Ship or Die. The peer pressure alone is worth the price.", date: "May 29, 2026" },
 ];
 
 const faqs = [
