@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Skull, Anchor, Compass, Trophy, X, Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -51,7 +51,7 @@ const faqs = [
 
 function Page() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Nav />
       <Hero />
       <ProblemBlock />
@@ -68,18 +68,45 @@ function Page() {
   );
 }
 
+function SkullLogo() {
+  return (
+    <span className="inline-block size-7 align-middle" aria-hidden>
+      <svg viewBox="0 0 16 16" className="size-full pixel" shapeRendering="crispEdges">
+        {/* hat */}
+        <g fill="#1a1a1a">
+          <rect x="3" y="1" width="10" height="1" />
+          <rect x="2" y="2" width="12" height="2" />
+        </g>
+        <rect x="7" y="2" width="2" height="1" fill="#e8c34a" />
+        {/* skull */}
+        <g fill="#f4ecd6">
+          <rect x="4" y="4" width="8" height="5" />
+          <rect x="5" y="9" width="6" height="1" />
+          <rect x="5" y="10" width="2" height="2" />
+          <rect x="9" y="10" width="2" height="2" />
+        </g>
+        {/* eyes */}
+        <rect x="6" y="6" width="1" height="2" fill="#1a1a1a" />
+        <rect x="9" y="6" width="1" height="2" fill="#1a1a1a" />
+        <rect x="7" y="8" width="2" height="1" fill="#1a1a1a" />
+      </svg>
+    </span>
+  );
+}
+
 function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2 font-pirate text-xl">
-          <Skull className="size-5 text-primary" />
-          <span>Ship or Die</span>
-          <span className="hidden text-xs font-mono text-muted-foreground sm:inline">by Marc Lou &amp; Jack Friks</span>
+    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
+        <a href="#" className="flex items-center gap-2">
+          <SkullLogo />
+          <span className="font-pirate text-2xl tracking-wide">Ship or Die</span>
+          <span className="hidden font-pixel text-[8px] text-muted-foreground sm:inline">BY MARC LOU &amp; JACK FRIKS</span>
         </a>
-        <nav className="flex items-center gap-2 text-sm">
-          <a href="#pricing" className="hidden px-3 py-2 text-muted-foreground hover:text-foreground sm:inline">Pricing</a>
-          <a href="#pricing" className="rounded-md bg-primary px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground transition hover:opacity-90">Join now</a>
+        <nav className="flex items-center gap-2">
+          <a href="#" className="btn-pixel-ghost hidden sm:inline-block">DASHBOARD</a>
+          <a href="#pricing" className="btn-pixel-ghost hidden sm:inline-block">PRICING</a>
+          <a href="#pricing" className="btn-pixel">JOIN NOW</a>
         </nav>
       </div>
     </header>
@@ -88,29 +115,34 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pt-16 pb-24 text-center">
-      <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">scroll to start</p>
-      <h1 className="mx-auto mt-6 max-w-4xl font-display text-6xl uppercase leading-[0.95] tracking-tight md:text-8xl">
-        <span className="text-parchment">SHIP</span> your app in
-        <br />
-        <span className="text-parchment">30 days</span>
-        <br />
-        <span className="font-pirate text-primary normal-case">or DIE</span>
-      </h1>
-      <p className="mx-auto mt-6 max-w-xl text-balance text-base text-muted-foreground md:text-lg">
-        miss the deadline, get kicked out forever.
-      </p>
-      <div className="mt-10 flex justify-center">
-        <img
-          src={shipHero.url}
-          alt="A pirate ship sailing through stormy seas"
-          className="w-full max-w-3xl rounded-xl border border-border/60 shadow-2xl shadow-black/50"
-        />
+    <section className="relative">
+      {/* Top headline area */}
+      <div className="mx-auto max-w-7xl px-5 pt-24 pb-20 md:pt-32 md:pb-40">
+        <h1 className="font-display text-[18vw] uppercase leading-[0.85] tracking-tight text-parchment md:text-[14rem]">
+          SHIP
+        </h1>
+        <p className="mt-2 font-mono text-base text-muted-foreground md:text-xl">your app in 30 days</p>
       </div>
-      <div className="mt-10">
-        <a href="#pricing" className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-lg shadow-primary/30 transition hover:translate-y-[-2px] hover:shadow-xl">
-          <Anchor className="size-4" /> Join the crew
-        </a>
+
+      {/* Scroll indicator */}
+      <div className="flex justify-center pb-20">
+        <p className="font-mono text-xs text-muted-foreground">👇 scroll to start</p>
+      </div>
+
+      {/* Or DIE giant */}
+      <div className="mx-auto flex max-w-7xl flex-col items-end px-5 pb-40 text-right">
+        <p className="font-mono text-sm text-muted-foreground md:text-lg">miss the deadline,</p>
+        <h2 className="font-pirate text-[20vw] leading-[0.9] text-primary md:text-[16rem]">or DIE</h2>
+        <p className="mt-2 font-mono text-sm text-muted-foreground md:text-base">get kicked out forever.</p>
+      </div>
+
+      {/* Pixel ship + waves */}
+      <div className="relative">
+        <div className="mx-auto flex max-w-7xl justify-end px-5">
+          <img src={shipHero.url} alt="A pirate ship of builders sailing the high seas" className="pixel relative z-10 w-[80%] max-w-3xl translate-y-8" />
+        </div>
+        <div className="wave-strip" />
+        <div className="wave-strip -mt-8 opacity-60" />
       </div>
     </section>
   );
@@ -118,18 +150,23 @@ function Hero() {
 
 function ProblemBlock() {
   return (
-    <section className="border-y border-border/40 bg-card/40 px-4 py-20">
+    <section className="px-5 py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="font-display text-4xl uppercase md:text-5xl">0 users. 0 revenue.</p>
-        <p className="mt-4 text-muted-foreground">Not because the idea is bad…</p>
-        <p className="mt-2 text-lg">…but because nobody can actually use your app yet.</p>
-        <div className="mx-auto mt-12 max-w-md rounded-lg border border-border bg-background p-6 text-left">
+        <p className="font-display text-5xl uppercase text-parchment md:text-7xl">0 users.</p>
+        <p className="font-display text-5xl uppercase text-parchment md:text-7xl">0 revenue.</p>
+        <p className="mt-8 text-muted-foreground">Not because the idea is bad…</p>
+        <p className="mt-2 text-xl">…but because nobody can actually use your app yet.</p>
+
+        <div className="mx-auto mt-16 max-w-md rounded border-2 border-border bg-card p-6 text-left">
           <p className="font-mono text-sm text-muted-foreground">"I'm two weeks away."</p>
           <p className="mt-3 font-pirate text-2xl text-primary">You've been two weeks away for four months 💀</p>
         </div>
-        <p className="mt-12 text-muted-foreground">Polishing in private isn't progress.</p>
-        <p className="mt-2 text-2xl font-semibold">
-          You don't need more time. You need a <span className="text-primary underline decoration-wavy">different strategy</span>.
+
+        <p className="mt-16 text-muted-foreground">Polishing in private isn't progress.</p>
+        <p className="mt-3 font-display text-3xl uppercase md:text-4xl">
+          You don't need more time.
+          <br />
+          You need a <span className="text-primary">different strategy</span>.
         </p>
       </div>
     </section>
@@ -138,9 +175,11 @@ function ProblemBlock() {
 
 function Pitch() {
   return (
-    <section className="px-4 py-24 text-center">
-      <h2 className="mx-auto max-w-3xl font-pirate text-4xl text-accent md:text-6xl">
-        Ship an app every 30 days until one changes your life
+    <section className="px-5 py-32 text-center">
+      <h2 className="mx-auto max-w-4xl font-pirate text-5xl leading-tight text-accent md:text-7xl">
+        Ship an app every 30 days
+        <br />
+        until one changes your life
       </h2>
     </section>
   );
@@ -183,18 +222,14 @@ function Steps() {
     },
   ];
   return (
-    <section className="space-y-32 px-4 py-16">
+    <section className="space-y-40 px-5 py-16">
       {items.map((it, i) => (
         <div key={it.n} className={`mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-          <div className="overflow-hidden rounded-2xl border border-border/60 shadow-xl shadow-black/40">
-            <img src={it.img} alt={it.title} className="w-full" />
-          </div>
+          <img src={it.img} alt={it.title} className="pixel w-full rounded border-2 border-border" />
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              <span className="text-accent">{it.n}</span> · step
-            </p>
-            <h3 className="mt-3 font-display text-5xl uppercase">{it.title}</h3>
-            <p className="mt-4 text-muted-foreground">{it.lede}</p>
+            <p className="font-pixel text-[10px] uppercase tracking-widest text-accent">{it.n} · STEP</p>
+            <h3 className="mt-4 font-display text-5xl uppercase text-parchment md:text-6xl">{it.title}</h3>
+            <p className="mt-5 text-muted-foreground">{it.lede}</p>
             <ul className="mt-6 space-y-3">
               {it.bullets.map((b) => (
                 <li key={b} className="flex gap-3">
@@ -218,18 +253,21 @@ function Overboard() {
     "No refund",
   ];
   return (
-    <section className="px-4 py-24">
-      <div className="mx-auto max-w-2xl rounded-2xl border-2 border-primary/60 bg-primary/10 p-10 text-center">
-        <p className="font-pirate text-3xl text-primary md:text-5xl">Miss the deadline...</p>
-        <p className="mt-2 font-display text-2xl uppercase">and you're out</p>
-        <ul className="mt-8 space-y-3 text-left">
-          {items.map((i) => (
-            <li key={i} className="flex items-center gap-3">
-              <X className="size-5 shrink-0 text-primary" />
-              <span>{i}</span>
-            </li>
-          ))}
-        </ul>
+    <section className="px-5 py-32">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="font-pirate text-5xl text-primary md:text-7xl">Miss the deadline…</p>
+        <p className="mt-2 font-display text-3xl uppercase">and you're out</p>
+        <div className="mx-auto mt-10 max-w-md rounded border-2 border-primary/60 bg-primary/10 p-8 text-left">
+          <ul className="space-y-3">
+            {items.map((i) => (
+              <li key={i} className="flex items-center gap-3">
+                <X className="size-5 shrink-0 text-primary" />
+                <span>{i}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a href="#pricing" className="btn-pixel mt-10 inline-block">JOIN THE CREW</a>
       </div>
     </section>
   );
@@ -237,15 +275,15 @@ function Overboard() {
 
 function Founders() {
   return (
-    <section className="border-y border-border/40 bg-card/40 px-4 py-24">
+    <section className="px-5 py-24">
       <div className="mx-auto max-w-5xl">
-        <p className="text-center font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Built by people who ship.</p>
-        <div className="mt-12 grid gap-10 md:grid-cols-2">
+        <p className="text-center font-pixel text-[10px] uppercase tracking-widest text-muted-foreground">Built by people who ship.</p>
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
           {[
             { name: "Marc Lou", initials: "ML", bio: "Marc thought he was Mark Zuckerberg and spent 2 years building ambitious startups nobody wanted: 0 users, $0 revenue. So he changed strategy: build, launch, repeat. He has now launched 30+ startups, including DataFast ($22K MRR) and TrustMRR ($33K MRR)." },
             { name: "jack friks", initials: "JF", bio: "Jack quit McDonald's to learn to code in his mom's basement. His first app Curiosity Quench hit 100,000 downloads, then he shipped Post Bridge (now $35K MRR) and Lovelee Couples (100,000+ downloads)." },
           ].map((f) => (
-            <div key={f.name} className="rounded-2xl border border-border bg-background p-6">
+            <div key={f.name} className="rounded border-2 border-border bg-card p-6">
               <div className="flex items-center gap-4">
                 <div className="grid size-14 place-items-center rounded-full bg-primary font-display text-xl text-primary-foreground">{f.initials}</div>
                 <h3 className="font-pirate text-3xl">{f.name}</h3>
@@ -261,14 +299,14 @@ function Founders() {
 
 function SocialProof() {
   return (
-    <section className="px-4 py-24">
+    <section className="px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <p className="text-center font-display text-3xl uppercase md:text-4xl">
+        <p className="text-center font-pirate text-4xl md:text-5xl">
           <span className="text-accent">242</span> pirates are shipping. Aye!
         </p>
         <div className="mt-12 columns-1 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5 [&>*]:break-inside-avoid">
           {tweets.map((t) => (
-            <div key={t.handle + t.date} className="rounded-xl border border-border bg-card p-5">
+            <div key={t.handle + t.date} className="rounded border-2 border-border bg-card p-5">
               <div className="flex items-center gap-3">
                 <div className="grid size-10 place-items-center rounded-full bg-muted font-mono text-xs">{t.name.slice(0, 2).toUpperCase()}</div>
                 <div>
@@ -294,11 +332,11 @@ function Pricing() {
     "No refund. Ship or get kicked out.",
   ];
   return (
-    <section id="pricing" className="px-4 py-24">
+    <section id="pricing" className="px-5 py-32">
       <div className="mx-auto max-w-md">
-        <p className="text-center font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">pricing</p>
+        <p className="text-center font-pixel text-[10px] uppercase tracking-widest text-muted-foreground">PRICING</p>
         <h2 className="mt-4 text-center font-display text-5xl uppercase">Join the crew.</h2>
-        <div className="mt-10 rounded-2xl border-2 border-accent/50 bg-card p-8 shadow-2xl shadow-accent/10">
+        <div className="mt-10 rounded border-2 border-accent/60 bg-card p-8">
           <div className="flex items-baseline justify-center gap-3">
             <span className="font-mono text-2xl text-muted-foreground line-through">$299</span>
             <span className="font-display text-6xl text-accent">$269</span>
@@ -312,10 +350,8 @@ function Pricing() {
               </li>
             ))}
           </ul>
-          <a href="#" className="mt-8 flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-4 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition hover:opacity-90">
-            <Trophy className="size-4" /> Join for $269
-          </a>
-          <div className="mt-6 space-y-2 text-center font-mono text-xs text-muted-foreground">
+          <a href="#" className="btn-pixel mt-8 block text-center">JOIN FOR $269</a>
+          <div className="mt-6 space-y-1.5 text-center font-mono text-xs text-muted-foreground">
             <p><span className="text-foreground">$249</span> sold out</p>
             <p><span className="text-foreground">$269</span> — 58 spots left</p>
             <p><span className="text-foreground">$299</span> next 100 users</p>
@@ -328,9 +364,9 @@ function Pricing() {
 
 function FAQ() {
   return (
-    <section className="px-4 py-24">
+    <section className="px-5 py-24">
       <div className="mx-auto max-w-2xl">
-        <h2 className="text-center font-display text-4xl uppercase">Questions before you board?</h2>
+        <h2 className="text-center font-display text-4xl uppercase md:text-5xl">Questions before you board?</h2>
         <Accordion type="single" collapsible className="mt-10">
           {faqs.map((f, i) => (
             <AccordionItem key={i} value={`i${i}`} className="border-border">
@@ -345,18 +381,18 @@ function FAQ() {
 }
 
 function CrewStrip() {
-  const crew = ["Jake North", "Pratik Kadam", "Himmy The Third", "Bro", "Harish", "Tunimba", "Niko", "Robert G", "Seb", "RoosterFish", "Guisong Fu", "alepbuilds", "Tristan", "Bartu", "Garm", "Patrick", "JC", "FloofyCode", "nikohbuilds", "Bit", "Rob Rock", "Mikael Vallenet", "Nish", "Jacob Wellinghoff", "Ayoub Moustaid", "Philip", "Nafi", "SK", "dany", "Tonnoz", "Pushpit", "Wade", "jihoon", "Sarthak Shaurya", "Ted Yap", "Umer Farooq", "haze", "Enrique", "Pawel", "Will Bray-Cotton", "Daniel", "Joachim Chauvet", "Stuart Blackler", "Girish Kotte", "Captain Tommy", "Brian", "DJjones", "TravelingTice", "Lazar", "Olivier"];
+  const crew = ["Jake North", "Pratik Kadam", "Himmy", "Bro", "Harish", "Tunimba", "Niko", "Robert G", "Seb", "RoosterFish", "Guisong Fu", "alepbuilds", "Tristan", "Bartu", "Garm", "Patrick", "JC", "FloofyCode", "nikohbuilds", "Bit", "Rob Rock", "Mikael V.", "Nish", "Jacob W.", "Ayoub M.", "Philip", "Nafi", "SK", "dany", "Tonnoz", "Pushpit", "Wade", "jihoon", "Sarthak", "Ted Yap", "Umer F.", "haze", "Enrique", "Pawel", "Will B-C"];
   return (
-    <section className="border-y border-border/40 bg-card/40 px-4 py-20">
+    <section className="border-y border-border/40 bg-card/40 px-5 py-20">
       <div className="mx-auto max-w-6xl text-center">
-        <div className="flex flex-wrap justify-center gap-8 font-pirate text-2xl">
-          <div><span className="text-accent">238</span> <span className="text-muted-foreground text-base font-sans">people shipping startups</span></div>
-          <div><span className="text-primary">4</span> <span className="text-muted-foreground text-base font-sans">people thrown overboard</span></div>
+        <div className="flex flex-wrap justify-center gap-10 font-pirate text-3xl md:text-5xl">
+          <div><span className="text-accent">238</span> <span className="text-muted-foreground font-sans text-base">people shipping startups</span></div>
+          <div><span className="text-primary">4</span> <span className="text-muted-foreground font-sans text-base">thrown overboard</span></div>
         </div>
-        <p className="mt-10 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">view crew page →</p>
+        <p className="mt-10 font-pixel text-[10px] uppercase tracking-widest text-muted-foreground">view crew page →</p>
         <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10">
-          {crew.slice(0, 40).map((name) => (
-            <div key={name} className="rounded-lg border border-border bg-background/60 px-2 py-3 text-xs">
+          {crew.map((name) => (
+            <div key={name} className="rounded border border-border bg-background/60 px-2 py-3 text-xs">
               <div className="mx-auto grid size-8 place-items-center rounded-full bg-muted font-mono text-[10px]">{name.slice(0,2).toUpperCase()}</div>
               <p className="mt-2 truncate font-medium">{name}</p>
               <p className="text-[10px] text-muted-foreground">0 shipped</p>
@@ -370,11 +406,8 @@ function CrewStrip() {
 
 function Footer() {
   return (
-    <footer className="px-4 py-10 text-center font-mono text-xs text-muted-foreground">
-      <div className="flex items-center justify-center gap-2">
-        <Compass className="size-4" />
-        <span>Terms · Privacy · © 2026 JustShipIt Pte. Ltd.</span>
-      </div>
+    <footer className="px-5 py-10 text-center font-mono text-xs text-muted-foreground">
+      <p>Terms · Privacy · © 2026 JustShipIt Pte. Ltd.</p>
     </footer>
   );
 }
