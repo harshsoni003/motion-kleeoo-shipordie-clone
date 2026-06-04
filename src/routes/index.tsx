@@ -33,6 +33,9 @@ const tweets = [
   { name: "Jesse", handle: "@heyfuturejesse", text: "I've lurked the build in public world for far too long. I'm going to ship a product in 30 days or die trying. Yarrr 🏴‍☠️", date: "May 27, 2026" },
   { name: "katalystkat", handle: "@katalyst_katt", text: "help i'm on a ship and i refuse to die", date: "May 26, 2026" },
   { name: "Jessyka Boatright", handle: "@jessyka_boat", text: "I joined!!!!", date: "May 26, 2026" },
+  { name: "vieren", handle: "@richvieren", text: "Replying to @daicandev — let's cook!!", date: "May 26, 2026" },
+  { name: "Aiden", handle: "@aidenbuilds", text: "Locked in. 30 days. Either I ship or I'm walking the plank 🏴‍☠️", date: "May 28, 2026" },
+  { name: "Marisa", handle: "@marisamakes", text: "Joined Ship or Die. The peer pressure alone is worth the price.", date: "May 29, 2026" },
 ];
 
 const faqs = [
@@ -319,10 +322,14 @@ function SocialProof() {
             </div>
           ))}
         </div>
+        <div className="mt-10 text-center">
+          <button className="btn-pixel-ghost">SHOW 10 MORE TWEETS</button>
+        </div>
       </div>
     </section>
   );
 }
+
 
 function Pricing() {
   const bullets = [
@@ -381,7 +388,18 @@ function FAQ() {
 }
 
 function CrewStrip() {
-  const crew = ["Jake North", "Pratik Kadam", "Himmy", "Bro", "Harish", "Tunimba", "Niko", "Robert G", "Seb", "RoosterFish", "Guisong Fu", "alepbuilds", "Tristan", "Bartu", "Garm", "Patrick", "JC", "FloofyCode", "nikohbuilds", "Bit", "Rob Rock", "Mikael V.", "Nish", "Jacob W.", "Ayoub M.", "Philip", "Nafi", "SK", "dany", "Tonnoz", "Pushpit", "Wade", "jihoon", "Sarthak", "Ted Yap", "Umer F.", "haze", "Enrique", "Pawel", "Will B-C"];
+  const crew: { name: string; shipped: number }[] = [
+    { name: "Jake North", shipped: 0 }, { name: "Pratik Kadam", shipped: 0 }, { name: "Himmy The Third", shipped: 0 }, { name: "Bro", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Harish", shipped: 0 }, { name: "Tunimba", shipped: 0 }, { name: "ImNotAPirate", shipped: 0 }, { name: "Niko", shipped: 0 }, { name: "Robert G", shipped: 0 },
+    { name: "New pirate", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Dr Vega Punk", shipped: 0 }, { name: "Seb", shipped: 0 }, { name: "RoosterFish", shipped: 0 }, { name: "Guisong Fu", shipped: 0 }, { name: "alepbuilds", shipped: 0 }, { name: "Tristan", shipped: 0 }, { name: "Chico Charlesworth", shipped: 0 }, { name: "New pirate", shipped: 0 },
+    { name: "Bartu", shipped: 0 }, { name: "Garm", shipped: 0 }, { name: "Patrick", shipped: 0 }, { name: "JC", shipped: 0 }, { name: "patrick_h", shipped: 0 }, { name: "FloofyCode", shipped: 0 }, { name: "nikohbuilds", shipped: 0 }, { name: "Bit", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Rob Rock", shipped: 0 },
+    { name: "Mikael Vallenet", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Nish", shipped: 0 }, { name: "LCSlates", shipped: 0 }, { name: "Jacob Wellinghoff", shipped: 0 }, { name: "Adrien Russo", shipped: 0 }, { name: "Ayoub Moustaid", shipped: 0 }, { name: "JihoonH", shipped: 0 }, { name: "Philip", shipped: 0 }, { name: "New pirate", shipped: 0 },
+    { name: "Nafi", shipped: 0 }, { name: "SK", shipped: 1 }, { name: "dany", shipped: 0 }, { name: "Tonnoz", shipped: 0 }, { name: "KillianMaker", shipped: 0 }, { name: "Pushpit", shipped: 0 }, { name: "Krishnan Sreeraman", shipped: 0 }, { name: "Wade", shipped: 0 }, { name: "x47", shipped: 0 }, { name: "jihoon", shipped: 0 },
+    { name: "Sarthak Shaurya", shipped: 0 }, { name: "Drifty Zen", shipped: 0 }, { name: "Ted Yap", shipped: 0 }, { name: "Umer Farooq", shipped: 0 }, { name: "Skein-Paul", shipped: 1 }, { name: "haze", shipped: 0 }, { name: "bernard", shipped: 0 }, { name: "Enrique", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Pawel", shipped: 1 },
+    { name: "The Martian", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Will Bray-Cotton", shipped: 0 }, { name: "Vignesh Aithal", shipped: 0 }, { name: "Agata Raap", shipped: 0 }, { name: "Daniel", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Joachim Chauvet", shipped: 0 }, { name: "Stuart Blackler", shipped: 0 }, { name: "Girish Kotte", shipped: 0 },
+    { name: "Captain Tommy", shipped: 0 }, { name: "Brian", shipped: 0 }, { name: "Marco Elizalde", shipped: 0 }, { name: "DJjones", shipped: 0 }, { name: "TravelingTice", shipped: 0 }, { name: "New pirate", shipped: 0 }, { name: "Lazar", shipped: 1 }, { name: "Olivier", shipped: 0 }, { name: "Sean H", shipped: 0 }, { name: "B1scu1tk1d", shipped: 0 },
+    { name: "Matt Lok", shipped: 0 }, { name: "Kamal", shipped: 0 }, { name: "Roberjet", shipped: 0 }, { name: "Suutari", shipped: 0 }, { name: "Teemu", shipped: 0 }, { name: "Loris", shipped: 0 }, { name: "Oscar Yiu", shipped: 1 }, { name: "Thomas Despin", shipped: 0 }, { name: "Dev", shipped: 0 }, { name: "Ranga", shipped: 0 },
+    { name: "Mad Dog Ishak", shipped: 0 }, { name: "Santiago Muñoz", shipped: 0 }, { name: "Dimitrios", shipped: 0 }, { name: "Nikolai Skor", shipped: 0 }, { name: "Zach", shipped: 0 },
+  ];
   return (
     <section className="border-y border-border/40 bg-card/40 px-5 py-20">
       <div className="mx-auto max-w-6xl text-center">
@@ -391,11 +409,11 @@ function CrewStrip() {
         </div>
         <p className="mt-10 font-pixel text-[10px] uppercase tracking-widest text-muted-foreground">view crew page →</p>
         <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10">
-          {crew.map((name) => (
-            <div key={name} className="rounded border border-border bg-background/60 px-2 py-3 text-xs">
-              <div className="mx-auto grid size-8 place-items-center rounded-full bg-muted font-mono text-[10px]">{name.slice(0,2).toUpperCase()}</div>
-              <p className="mt-2 truncate font-medium">{name}</p>
-              <p className="text-[10px] text-muted-foreground">0 shipped</p>
+          {crew.map((c, i) => (
+            <div key={i} className="rounded border border-border bg-background/60 px-2 py-3 text-xs">
+              <div className="mx-auto grid size-8 place-items-center rounded-full bg-muted font-mono text-[10px]">{c.name.slice(0,2).toUpperCase()}</div>
+              <p className="mt-2 truncate font-medium">{c.name}</p>
+              <p className="text-[10px] text-muted-foreground">{c.shipped} shipped</p>
             </div>
           ))}
         </div>
