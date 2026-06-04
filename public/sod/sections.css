@@ -300,10 +300,10 @@
 @keyframes skullBob { 0%,100%{ transform: translateY(0) rotate(-4deg);} 50%{ transform: translateY(-9px) rotate(4deg);} }
 
 /* crew atmosphere */
-.crew-moon { position:absolute; top:10vh; right:14vw; width:90px; height:90px; border-radius:50%; background:radial-gradient(circle at 38% 36%,#fbf3da,#d9c79a 70%,#c4b487); box-shadow:0 0 50px 14px rgba(243,230,201,.18); z-index:1; }
-.crew-wave { position:absolute; left:-10%; right:-10%; bottom:0; height:30vh; background-repeat:repeat-x; z-index:8; }
-.crew-wave-back { bottom:8vh; opacity:.7; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='80' viewBox='0 0 240 80'%3E%3Cpath d='M0 24 Q30 8 60 24 T120 24 T180 24 T240 24 V80 H0 Z' fill='%230a1c2e'/%3E%3C/svg%3E"); background-size:240px 80px; animation: waveRoll 16s linear infinite; }
-.crew-wave-front { bottom:0; height:24vh; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='100' viewBox='0 0 260 100'%3E%3Cpath d='M0 30 Q32 12 65 30 T130 30 T195 30 T260 30 V100 H0 Z' fill='%23061523'/%3E%3C/svg%3E"); background-size:260px 100px; animation: waveRoll 11s linear infinite reverse; }
+.crew-moon { position:absolute; top:90px; right:14vw; width:90px; height:90px; border-radius:50%; background:radial-gradient(circle at 38% 36%,#fbf3da,#d9c79a 70%,#c4b487); box-shadow:0 0 50px 14px rgba(243,230,201,.18); z-index:1; }
+.crew-wave { position:absolute; left:-10%; right:-10%; bottom:0; height:270px; background-repeat:repeat-x; z-index:8; }
+.crew-wave-back { bottom:72px; opacity:.7; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='80' viewBox='0 0 240 80'%3E%3Cpath d='M0 24 Q30 8 60 24 T120 24 T180 24 T240 24 V80 H0 Z' fill='%230a1c2e'/%3E%3C/svg%3E"); background-size:240px 80px; animation: waveRoll 16s linear infinite; }
+.crew-wave-front { bottom:0; height:216px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='100' viewBox='0 0 260 100'%3E%3Cpath d='M0 30 Q32 12 65 30 T130 30 T195 30 T260 30 V100 H0 Z' fill='%23061523'/%3E%3C/svg%3E"); background-size:260px 100px; animation: waveRoll 11s linear infinite reverse; }
 
 @media (prefers-reduced-motion: reduce) {
   .crew-ship, .crew-wave-back, .crew-wave-front { animation: none !important; }
