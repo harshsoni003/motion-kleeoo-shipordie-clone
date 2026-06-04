@@ -5,13 +5,13 @@
 /* ---------------- 2. scroll-blur reveal ---------------- */
 .reveal-section {
   position: relative;
-  min-height: 145vh;
+  min-height: 1305px;
   background: var(--bg);
   color: var(--bone);
 }
 .reveal-sticky {
   position: sticky; top: 0;
-  min-height: 100vh;
+  min-height: 900px;
   display: flex; align-items: center;
   max-width: var(--maxw); margin: 0 auto;
   padding: 3rem 1.25rem;
@@ -268,8 +268,8 @@
 .faq__body p { margin:0; max-width:48rem; font-family:'Geist Mono',monospace; font-size:.875rem; line-height:1.75; color:var(--mute-2); }
 
 /* ---------------- 7. community footer ---------------- */
-.crew-section { position: relative; overflow: hidden; min-height: 100vh; background: linear-gradient(180deg, #061321 0%, #030c16 60%, #02080f 100%); }
-.crew-inner { position: relative; z-index: 10; margin:0 auto; max-width: var(--maxw); min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end; padding: 4rem 1.25rem 2rem; }
+.crew-section { position: relative; overflow: hidden; min-height: 900px; background: linear-gradient(180deg, #061321 0%, #030c16 60%, #02080f 100%); }
+.crew-inner { position: relative; z-index: 10; margin:0 auto; max-width: var(--maxw); min-height: 900px; display:flex; flex-direction:column; justify-content:flex-end; padding: 4rem 1.25rem 2rem; }
 @media (min-width:640px){ .crew-inner{ padding:4rem 2rem 2rem; } }
 .crew-head { position:absolute; left:1.25rem; top:2rem; z-index:40; }
 @media (min-width:640px){ .crew-head{ left:2rem; } }

@@ -9,14 +9,14 @@
 
 #top {
   position: relative;
-  height: 360vh;            /* tall scroll track */
+  height: 3240px;            /* tall scroll track */
   background: var(--bg-deep);
 }
 
 .hero-stage {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 900px;
   overflow: hidden;
   background:
     radial-gradient(120% 90% at 50% 6%, #0a1a2b 0%, #061321 38%, var(--bg-deep) 72%);
@@ -43,7 +43,7 @@
 
 .moon {
   position: absolute;
-  top: 9vh; right: 13vw;
+  top: 81px; right: 13vw;
   width: 120px; height: 120px;
   border-radius: 50%;
   background:
@@ -78,8 +78,8 @@
   opacity: calc(0.5 + var(--storm) * 0.45);
   filter: brightness(calc(1 + var(--storm) * 0.1));
 }
-.cloud-1 { width: 140px; height: 34px; border-radius: 30px; top: 12vh; left: 14vw; animation: cloudDrift 46s linear infinite; }
-.cloud-2 { width: 110px; height: 28px; border-radius: 26px; top: 20vh; right: 26vw; animation: cloudDrift 62s linear infinite reverse; }
+.cloud-1 { width: 140px; height: 34px; border-radius: 30px; top: 108px; left: 14vw; animation: cloudDrift 46s linear infinite; }
+.cloud-2 { width: 110px; height: 28px; border-radius: 26px; top: 180px; right: 26vw; animation: cloudDrift 62s linear infinite reverse; }
 @keyframes cloudDrift { to { transform: translateX(60px); } }
 
 /* ---------------- storm overlay ---------------- */
@@ -99,7 +99,7 @@
   opacity: var(--flash, 0);
 }
 .storm-bolt {
-  position: absolute; top: 0; left: 0; right: 0; height: 60vh; z-index: 6; pointer-events: none;
+  position: absolute; top: 0; left: 0; right: 0; height: 540px; z-index: 6; pointer-events: none;
   background: url("https://www.ship-or-die.com/landing/pirate/storm-bg.png") center top / cover no-repeat;
   mix-blend-mode: screen;
   opacity: calc(var(--flash, 0) * 0.9);
@@ -107,7 +107,7 @@
 
 /* ---------------- rain ---------------- */
 .rain {
-  position: fixed; inset: 0; z-index: 7; pointer-events: none; overflow: hidden;
+  position: absolute; inset: 0; z-index: 7; pointer-events: none; overflow: hidden;
   mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
   opacity: var(--rain, 0);
   transition: opacity .32s steps(4, end);
@@ -125,10 +125,10 @@
   animation: rainDrop var(--dur,720ms) linear infinite;
   animation-delay: var(--delay, 0ms);
 }
-@keyframes rainDrop { to { translate: var(--drift,-20vw) 118vh; } }
+@keyframes rainDrop { to { translate: var(--drift,-20vw) 1062px; } }
 
 /* ---------------- sea ---------------- */
-.seascape { position: absolute; left: 0; right: 0; bottom: 0; height: 56vh; z-index: 4; }
+.seascape { position: absolute; left: 0; right: 0; bottom: 0; height: 504px; z-index: 4; }
 
 .wave {
   position: absolute; left: -10%; right: -10%; bottom: 0;
@@ -137,8 +137,8 @@
   image-rendering: pixelated;
 }
 .wave-back {
-  bottom: 7vh;
-  height: 26vh;
+  bottom: 63px;
+  height: 234px;
   opacity: .8;
   background-image: url("https://www.ship-or-die.com/landing/pirate/wave-tile.png");
   background-size: auto 100%;
@@ -147,7 +147,7 @@
 }
 .wave-front {
   bottom: 0;
-  height: 26vh;
+  height: 234px;
   background-image: url("https://www.ship-or-die.com/landing/pirate/wave-tile.png");
   background-size: auto 100%;
   animation: waveRoll 11s linear infinite reverse;
@@ -155,7 +155,7 @@
 @keyframes waveRoll { to { background-position-x: 512px; } }
 
 .sea-floor {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 16vh; z-index: 5;
+  position: absolute; left: 0; right: 0; bottom: 0; height: 144px; z-index: 5;
   background: linear-gradient(180deg, #071624 0%, #04101b 100%);
 }
 
@@ -163,7 +163,7 @@
 .ship-wrap {
   position: absolute;
   right: max(0px, calc(50% - 46rem));
-  bottom: 11vh;
+  bottom: 99px;
   width: min(720px, 53vw);
   z-index: 5;
   --bob-amp: calc(8px + var(--storm) * 22px);
@@ -206,7 +206,7 @@
   z-index: 6;
   width: 62px; height: 62px;
   left: 50%;
-  bottom: 22vh;
+  bottom: 198px;
   opacity: var(--slacker-op, 0);
   transform:
     translateX(calc(-50% + var(--pirate-x, 0px)))
@@ -219,7 +219,7 @@
   position: absolute;
   z-index: 5;
   left: 50%;
-  bottom: 15vh;
+  bottom: 135px;
   width: 120px; height: 60px;
   transform: translateX(calc(-50% + var(--splash-x, 150px))) scale(var(--splash-scale, .6));
   transform-origin: 50% 100%;
@@ -336,7 +336,7 @@
 
 /* ---------------- activity feed toast ---------------- */
 .activity-toast {
-  position: absolute; left: clamp(1rem, 4vw, 2.5rem); bottom: clamp(1.25rem, 5vh, 2.5rem);
+  position: absolute; left: clamp(1rem, 4vw, 2.5rem); bottom: clamp(1.25rem, 45px, 2.5rem);
   z-index: 25;
   display: flex; align-items: center; gap: .8rem;
   max-width: 22rem;
