@@ -409,11 +409,11 @@ function CrewStrip() {
         </div>
         <p className="mt-10 font-pixel text-[10px] uppercase tracking-widest text-muted-foreground">view crew page →</p>
         <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10">
-          {crew.map((name) => (
-            <div key={name} className="rounded border border-border bg-background/60 px-2 py-3 text-xs">
-              <div className="mx-auto grid size-8 place-items-center rounded-full bg-muted font-mono text-[10px]">{name.slice(0,2).toUpperCase()}</div>
-              <p className="mt-2 truncate font-medium">{name}</p>
-              <p className="text-[10px] text-muted-foreground">0 shipped</p>
+          {crew.map((c, i) => (
+            <div key={i} className="rounded border border-border bg-background/60 px-2 py-3 text-xs">
+              <div className="mx-auto grid size-8 place-items-center rounded-full bg-muted font-mono text-[10px]">{c.name.slice(0,2).toUpperCase()}</div>
+              <p className="mt-2 truncate font-medium">{c.name}</p>
+              <p className="text-[10px] text-muted-foreground">{c.shipped} shipped</p>
             </div>
           ))}
         </div>
