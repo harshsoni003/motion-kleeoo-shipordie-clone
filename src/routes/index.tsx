@@ -322,10 +322,14 @@ function SocialProof() {
             </div>
           ))}
         </div>
+        <div className="mt-10 text-center">
+          <button className="btn-pixel-ghost">SHOW 10 MORE TWEETS</button>
+        </div>
       </div>
     </section>
   );
 }
+
 
 function Pricing() {
   const bullets = [
