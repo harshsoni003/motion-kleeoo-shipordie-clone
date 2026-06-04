@@ -1,0 +1,200 @@
+/* ============================================================
+   SHIP OR DIE — base tokens, typography, shared components
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pirata+One&family=Press+Start+2P&family=Geist+Mono:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* surfaces */
+  --bg:           #040b15;
+  --bg-deep:      #030914;
+  --bg-abyss:     #020712;
+  --panel:        #06111d;
+  --panel-2:      #071827;
+
+  /* ink */
+  --bone:         #f3e6c9;
+  --bone-soft:    #e7dcc3;
+  --mute:         #c3d0ca;
+  --mute-2:       #a7b6b2;
+  --mute-3:       #88a7a3;
+  --mute-4:       #6f8487;
+
+  /* accents */
+  --gold:         #d4a556;
+  --red:          #e2695e;
+  --red-bright:   #d85a4d;
+  --red-btn:      #a8463f;
+  --red-btn-lo:   #7a292b;
+  --green:        #76c893;
+
+  /* lines */
+  --line:         #203544;
+  --line-2:       #284c4a;
+  --line-3:       #34595a;
+  --deep:         #241016;
+
+  --maxw: 80rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--bone);
+  font-family: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { overflow-x: hidden; }
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+.font-display { font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; }
+.font-pirate  { font-family: 'Pirata One', serif; font-weight: 400; }
+.font-pixel   { font-family: 'Press Start 2P', monospace; }
+.font-mono    { font-family: 'Geist Mono', monospace; }
+
+/* pixel-crisp images / svg */
+.pixel-art { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* noise overlay reused on dark sections */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  background: url("https://www.ship-or-die.com/landing/pirate/pixel-noise.png") repeat;
+  z-index: 0;
+}
+
+/* ---------- the chunky pixel "plank" button ---------- */
+.pixel-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  background: var(--red-btn);
+  color: var(--bone);
+  font-family: 'Geist Mono', monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  min-height: 2.65rem;
+  min-width: 7.9rem;
+  padding: 0 1rem;
+  font-size: 0.68rem;
+  clip-path: polygon(0 5px,5px 5px,5px 0,calc(100% - 5px) 0,calc(100% - 5px) 5px,100% 5px,100% calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 100%,5px 100%,5px calc(100% - 5px),0 calc(100% - 5px));
+  box-shadow:
+    inset 0 3px 0 rgba(243,230,201,0.10),
+    inset 0 -5px 0 var(--red-btn-lo),
+    inset 4px 0 0 rgba(255,255,255,0.03),
+    inset -4px 0 0 rgba(36,16,22,0.2),
+    0 0 0 2px rgba(36,16,22,0.9),
+    0 7px 0 var(--deep),
+    0 16px 34px rgba(0,0,0,0.34);
+  transition: filter .15s ease-out, transform .15s ease-out;
+}
+.pixel-btn::before {
+  content: "";
+  position: absolute;
+  inset: 7px 8px;
+  pointer-events: none;
+  border-top: 2px solid rgba(243,230,201,0.09);
+  border-bottom: 2px solid rgba(36,16,22,0.28);
+}
+.pixel-btn::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  box-shadow: inset 3px 3px 0 rgba(87,30,34,0.45), inset -3px -3px 0 rgba(243,230,201,0.05);
+}
+.pixel-btn:hover { transform: translateY(-2px); filter: brightness(1.05) saturate(1.1); }
+.pixel-btn:active { transform: translateY(4px); }
+.pixel-btn > span {
+  position: relative;
+  z-index: 10;
+  white-space: nowrap;
+  color: var(--bone);
+  text-shadow: 2px 2px 0 rgba(36,16,22,0.42);
+}
+
+.pixel-btn--lg {
+  min-height: 3.75rem;
+  min-width: 0;
+  width: 100%;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  clip-path: polygon(0 7px,7px 7px,7px 0,calc(100% - 7px) 0,calc(100% - 7px) 7px,100% 7px,100% calc(100% - 7px),calc(100% - 7px) calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,7px calc(100% - 7px),0 calc(100% - 7px));
+}
+@media (min-width: 640px) {
+  .pixel-btn--lg { width: auto; min-height: 4.4rem; min-width: 18.5rem; padding: 0 2.25rem; font-size: clamp(1rem,1.35vw,1.35rem); letter-spacing: 0.1em; }
+}
+
+/* ghost / outline button (nav) */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.375rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--mute-3);
+  transition: color .2s, border-color .2s;
+}
+.btn-ghost:hover { color: var(--bone); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-height: 2.25rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 0.25rem 1.25rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--bone);
+  transition: border-color .2s;
+}
+.btn-outline:hover { border-color: var(--line-3); }
+
+@media (min-width: 640px) {
+  .btn-ghost {
+    min-height: 2.25rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 0.25rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--bone);
+  }
+  .btn-ghost:hover { border-color: var(--line-3); }
+}
+
+/* shared section shell */
+.section { position: relative; overflow: hidden; padding: 6rem 1.25rem; }
+@media (min-width: 640px) { .section { padding: 6rem 2rem; } }
+@media (min-width: 1024px) { .section { padding: 6rem 2.5rem; } }
+.container { position: relative; z-index: 10; margin: 0 auto; max-width: var(--maxw); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

@@ -1,0 +1,390 @@
+<main>
+
+<!-- ============================================================
+     1 · HERO  (scroll-driven pirate scene)
+     ============================================================ -->
+<section id="top" data-screen-label="Hero">
+  <div class="hero-stage">
+
+    <!-- sky -->
+    <div class="sky" aria-hidden="true">
+      <div class="stars"></div>
+      <div class="moon"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+    </div>
+
+    <!-- storm + lightning -->
+    <div class="storm" aria-hidden="true"></div>
+    <div class="storm-flash" aria-hidden="true"></div>
+    <div class="storm-bolt" aria-hidden="true"></div>
+
+    <!-- sea + ship -->
+    <div class="seascape" aria-hidden="true">
+      <div class="wave wave-back"></div>
+
+      <div class="ship-wrap">
+        <div class="ship">
+          <img class="ship-image" alt="A ship of pirates sailing toward the horizon" src="https://www.ship-or-die.com/_next/static/media/ship-hero.11aijkz4a5ddc.webp">
+          <img class="crew-mate" alt="" src="sod/img/crew-working.png" style="left:7%;bottom:31%;width:12%">
+          <img class="crew-mate" alt="" src="sod/img/crew-working.png" style="left:40%;bottom:25%;width:11%">
+          <img class="crew-mate" alt="" src="sod/img/crew-working.png" style="left:56%;bottom:24%;width:11%">
+          <img class="crew-mate" alt="" src="sod/img/crew-working.png" style="left:72%;bottom:27%;width:11%">
+          <img id="captainSprite" class="captain-mate pixel-art" alt="" src="https://www.ship-or-die.com/landing/pirate/captain-frame-0.png" style="left:17%;bottom:29%;width:14%">
+        </div>
+
+        <div class="plank-pirate">
+          <img id="slackerSprite" class="pixel-art" alt="" src="https://www.ship-or-die.com/landing/pirate/slacker-frame-0.png" style="width:100%;height:auto;display:block">
+        </div>
+
+        <div class="splash">
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 56 Q30 18 40 56 M50 56 Q60 8 72 56 M80 56 Q92 22 108 56" fill="none" stroke="#d8f0f6" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="40" cy="16" r="3" fill="#d8f0f6"/>
+            <circle cx="64" cy="8" r="4" fill="#d8f0f6"/>
+            <circle cx="88" cy="18" r="3" fill="#d8f0f6"/>
+            <ellipse cx="60" cy="56" rx="50" ry="8" fill="#d8f0f6" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="wave wave-front"></div>
+      <div class="sea-floor"></div>
+    </div>
+
+    <!-- rain (fixed full-screen) -->
+    <div class="rain" aria-hidden="true"></div>
+
+    <!-- top nav -->
+    <header class="hero-nav">
+      <a class="brand" href="#top" aria-label="Ship or Die home">
+        <span class="brand-mark"><img class="pixel-art" alt="" src="sod/img/icon.png"></span>
+        <span class="brand-text"><strong>Ship or Die</strong><small>by Marc Lou &amp; Jack Friks</small></span>
+      </a>
+      <nav class="hero-nav-actions">
+        <a class="btn-ghost" href="#">Dashboard</a>
+        <a class="btn-outline" href="#pricing">Pricing</a>
+        <button class="pixel-btn" type="button"><span>Join now</span></button>
+      </nav>
+    </header>
+
+    <!-- copy (left column) -->
+    <div class="hero-copy">
+      <div class="ship-copy">
+        <h1>SHIP</h1>
+        <span class="launch-copy">your app in 30 days</span>
+      </div>
+      <div class="consequence-copy">
+        <strong>
+          <span class="consequence-copy__or">or</span>
+          <span class="consequence-copy__die">DIE</span>
+        </strong>
+        <span>miss the deadline, get kicked out forever.</span>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <span class="scroll-cue" aria-hidden="true">
+      <img class="scroll-cue__hand" alt="" src="https://www.ship-or-die.com/landing/pirate/scroll-hand.png">
+      <span>scroll to start</span>
+    </span>
+
+    <!-- activity feed toast -->
+    <div class="activity-toast" role="status">
+      <img alt="" src="sod/img/blood-skull.png">
+      <div class="activity-toast__body">
+        <p class="activity-toast__text">The crew rejected <b>Jake's</b> startup <b>Dwight HQ.</b></p>
+        <p class="activity-toast__time">1 hour ago</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     2 · SCROLL-BLUR REVEAL
+     ============================================================ -->
+<section class="reveal-section noise" data-screen-label="Problem">
+  <div class="reveal-sticky">
+    <div class="reveal-inner">
+      <div class="reveal-grid">
+        <p class="reveal-line"><em>0 users.</em></p>
+        <p class="reveal-line"><em>0 revenue.</em></p>
+        <p class="reveal-line">Not because the idea is bad...</p>
+        <p class="reveal-line">...but because nobody can actually use your app yet.</p>
+        <p class="reveal-line"><i>“I'm two weeks away.”</i></p>
+        <p class="reveal-line">You've been two weeks away for four months 💀</p>
+        <p class="reveal-line"><em>Polishing in private isn't progress.</em></p>
+        <p class="reveal-line"><strong>You don't need more time.<br>You need a <em>different strategy</em>.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3 · STEPS
+     ============================================================ -->
+<section class="steps-section noise" data-screen-label="How it works">
+  <div class="container">
+    <h2 class="steps-title">Ship an app every 30 days<br><span>until one changes your life</span></h2>
+
+    <div class="steps-list">
+
+      <article class="step">
+        <div class="step-copy">
+          <div class="step-num-row"><div class="step-num">01</div><p class="step-kicker">step</p></div>
+          <h3>Become a pirate</h3>
+          <p class="lead">You are the average of the five people you spend the most time with. Join a private crew of builders who ship, not productivity tourists.</p>
+          <div class="step-points">
+            <p>Join our Discord community of pirates who ship</p>
+            <p>Hold each other accountable with daily check-ins</p>
+            <p>Feeling solo? Join the voice channels and cowork with others</p>
+          </div>
+        </div>
+        <div class="step-art">
+          <div class="win">
+            <div class="win-bar" aria-hidden="true"><span style="background:#d85a4d"></span><span style="background:#d4a556"></span><span style="background:#5f8381"></span></div>
+            <div class="win-body">
+              <img class="step-photo pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/_next/static/media/step-1.146j4hpyjcz8o.png">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step step--flip">
+        <div class="step-copy">
+          <div class="step-num-row"><div class="step-num">02</div><p class="step-kicker">step</p></div>
+          <h3>Make small bets</h3>
+          <p class="lead">Building a business is scary. Build one feature with a buy button instead. We break down the core of making small bets into a gamified startup roadmap.</p>
+          <div class="step-points">
+            <p>One feature. A buy button. That's all you need to validate</p>
+            <p>Overthinking? Each step guides you to the next</p>
+            <p>Finally launch your idea — it's mandatory</p>
+          </div>
+        </div>
+        <div class="step-art">
+          <div class="win">
+            <div class="win-bar" aria-hidden="true"><span style="background:#d85a4d"></span><span style="background:#d4a556"></span><span style="background:#5f8381"></span></div>
+            <div class="win-body">
+              <img class="step-photo pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/_next/static/media/step-2.17jvbmqhriu4h.jpg">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-copy">
+          <div class="step-num-row"><div class="step-num">03</div><p class="step-kicker">step</p></div>
+          <h3>Don't quit</h3>
+          <p class="lead">This is the whole game. Ship or Die exists so quitting feels stupid and shipping feels fun. Keep building until you find the startup that changes your life.</p>
+          <div class="step-points">
+            <p>Public mission profiles that keep you accountable</p>
+            <p>30-day deadlines and trophies that turn shipping into a game</p>
+            <p>Ship, launch, repeat is your new normal</p>
+          </div>
+        </div>
+        <div class="step-art">
+          <div class="win">
+            <div class="win-bar" aria-hidden="true"><span style="background:#d85a4d"></span><span style="background:#d4a556"></span><span style="background:#5f8381"></span></div>
+            <div class="win-body">
+              <img class="step-photo pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/_next/static/media/step-3.0jt6mi8tf6a48.jpg">
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="margin-top:7rem;display:flex;justify-content:center">
+      <button class="pixel-btn pixel-btn--lg" type="button"><span>Join the crew</span></button>
+    </div>
+  </div>
+
+  <!-- consequence -->
+  <div class="consequence">
+    <p class="consequence__head"><span>Miss the deadline...</span> <span class="consequence__sting">and you're out</span></p>
+    <div class="consequence-list">
+      <p><span class="x">✕</span>Hall of shame in the public Discord channel</p>
+      <p><span class="x">✕</span>Kicked out of the community</p>
+      <p><span class="x">✕</span>Publicly marked overboard</p>
+      <p><span class="x">✕</span>No refund</p>
+    </div>
+    <div class="plank-scene" aria-hidden="true">
+      <img class="plank-plank pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/_next/static/media/deadline-plank-left.17o-52-wukx59.png"><img class="plank-pirate-edge pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/_next/static/media/deadline-pirate-edge.16y66yqx1ck8..png"><img class="plank-shark pixel-art" alt="" loading="lazy" src="https://www.ship-or-die.com/images/misc/shark-fin.png">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4 · BUILT BY PEOPLE WHO SHIP
+     ============================================================ -->
+<section class="builders-section" data-screen-label="Founders">
+  <div class="builders-rule" aria-hidden="true"></div>
+  <div style="position:relative;z-index:10">
+    <h2 class="builders-title">Built by people who ship.</h2>
+
+    <div class="founder-grid">
+      <article class="founder">
+        <div class="founder__frame" aria-hidden="true"></div>
+        <span class="x-badge" aria-hidden="true"><img class="pixel-art" alt="" src="https://www.ship-or-die.com/_next/static/media/x-badge.01e985e0zf99t.png"></span>
+        <div class="founder__inner">
+          <div class="founder__avatar">
+            <svg viewBox="0 0 100 100" shape-rendering="crispEdges" aria-hidden="true">
+              <rect width="100" height="100" fill="#0d2030"/>
+              <rect x="30" y="18" width="40" height="14" fill="#a8463f"/>
+              <rect x="26" y="22" width="6" height="8" fill="#a8463f"/>
+              <rect x="30" y="32" width="40" height="34" fill="#caa07a"/>
+              <rect x="40" y="44" width="8" height="8" fill="#1c120a"/>
+              <rect x="56" y="44" width="8" height="8" fill="#1c120a"/>
+              <rect x="38" y="60" width="26" height="4" fill="#7a4a2a"/>
+              <rect x="24" y="66" width="52" height="34" fill="#2d4a52"/>
+              <rect x="44" y="66" width="12" height="20" fill="#d4a556"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Marlow</h3>
+            <p>Spent 2 years building ambitious startups nobody wanted: 0 users, $0 revenue. So they changed strategy — build, launch, repeat — and have now shipped 30+ products, several past $20K MRR.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="founder">
+        <div class="founder__frame" aria-hidden="true"></div>
+        <span class="x-badge" aria-hidden="true"><img class="pixel-art" alt="" src="https://www.ship-or-die.com/_next/static/media/x-badge.01e985e0zf99t.png"></span>
+        <div class="founder__inner">
+          <div class="founder__avatar">
+            <svg viewBox="0 0 100 100" shape-rendering="crispEdges" aria-hidden="true">
+              <rect width="100" height="100" fill="#0d2030"/>
+              <rect x="28" y="14" width="44" height="20" fill="#3a2516"/>
+              <rect x="30" y="30" width="40" height="36" fill="#caa07a"/>
+              <rect x="40" y="44" width="8" height="8" fill="#1c120a"/>
+              <rect x="56" y="44" width="8" height="8" fill="#1c120a"/>
+              <rect x="40" y="60" width="24" height="6" fill="#3a2516"/>
+              <rect x="24" y="66" width="52" height="34" fill="#2d4a52"/>
+              <rect x="44" y="66" width="12" height="20" fill="#88a7a3"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Hatch</h3>
+            <p>Quit a dead-end job to learn to code in a basement. First app hit 100,000 downloads, then shipped two more products now generating real monthly revenue. Proof the loop works.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- tweet wall -->
+    <div class="tweets">
+      <h3><span>242</span> pirates are shipping. Aye!</h3>
+      <ul class="tweet-wall" aria-label="recent crew posts" id="tweetWall"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5 · PRICING
+     ============================================================ -->
+<section id="pricing" class="pricing-section noise" data-screen-label="Pricing">
+  <div class="container" style="max-width:48rem">
+    <p class="pricing-kicker">pricing</p>
+    <h2 class="pricing-title">Join the crew.</h2>
+
+    <div class="price-card">
+      <div class="price-card__frame" aria-hidden="true"></div>
+      <div class="price-row">
+        <span class="price-old">$299</span>
+        <p class="price-now">$269</p>
+      </div>
+      <p class="price-sub">one-time payment</p>
+
+      <ul class="price-feats">
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4 4L19 6.5" stroke="currentColor" stroke-width="2.5"/></svg><span>Private community access</span></li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4 4L19 6.5" stroke="currentColor" stroke-width="2.5"/></svg><span>Gamified 30-day startup journey</span></li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4 4L19 6.5" stroke="currentColor" stroke-width="2.5"/></svg><span>Public profile with all your apps</span></li>
+        <li class="no"><svg class="xx" viewBox="0 0 24 24" fill="none"><path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="2.5"/></svg><span>No refund. Ship or get kicked out.</span></li>
+      </ul>
+
+      <div class="price-cta">
+        <button class="pixel-btn pixel-btn--lg" type="button"><span>Join for $269</span></button>
+      </div>
+
+      <div class="price-tiers">
+        <div class="price-tiers__line" aria-hidden="true"></div>
+        <div class="price-tiers__grid">
+          <div class="tier">
+            <div class="tier__dot"><span></span></div>
+            <p class="tier__price">$249</p>
+            <p class="tier__label">sold out</p>
+          </div>
+          <div class="tier tier--active">
+            <div class="tier__dot"><span></span></div>
+            <p class="tier__price">$269</p>
+            <p class="tier__label"><b class="js-spots">58</b> spots left</p>
+          </div>
+          <div class="tier">
+            <div class="tier__dot"><span></span></div>
+            <p class="tier__price">$299</p>
+            <p class="tier__label">next 100 users</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6 · FAQ
+     ============================================================ -->
+<section class="faq-section noise" data-screen-label="FAQ">
+  <div class="faq-blob faq-blob-1" aria-hidden="true"></div>
+  <div class="faq-blob faq-blob-2" aria-hidden="true"></div>
+  <div class="container" style="max-width:48rem">
+    <h2 class="faq-title">Questions before you board?</h2>
+    <div class="faq-list">
+      <details class="faq" open><summary><h3>What app can I work on?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>Anything, as long as it can be shared with a link. SaaS, tool, directory, marketplace, AI wrapper, cursed little experiment. If the crew can click it, it counts.</p></div></details>
+      <details class="faq" open><summary><h3>What if I already have an idea?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>Good. Bring it aboard and stop polishing the treasure map. The point is to ship the smallest version people can actually use.</p></div></details>
+      <details class="faq" open><summary><h3>What if I do not have an idea yet?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>You will pick one fast. No hiding in the fog for three weeks asking the wind for permission.</p></div></details>
+      <details class="faq"><summary><h3>Do I need to be a technical founder?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>No. You need enough grit to get a link live. Code it, vibe code it, duct-tape it. The sea does not care how the boat floats.</p></div></details>
+      <details class="faq"><summary><h3>When does the 30-day timer start?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>After checkout, you choose the project you are committing to. Once that mission is created, the 30-day timer starts. After you ship and stay on board, you do not have to start another mission right away — start a new one whenever you want, and that starts a new 30-day timer.</p></div></details>
+      <details class="faq"><summary><h3>What happens if I do not launch in 30 days?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>You get marked overboard, lose community access, and become a warning tale for the next batch of pirates who thought they were special.</p></div></details>
+      <details class="faq"><summary><h3>Can I change my idea after joining?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>Yes, early and for a real reason. But once you've signed the oath, you're committed to the idea and the 30-day clock.</p></div></details>
+      <details class="faq"><summary><h3>Is this a course?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>No. Courses let you feel productive while staying hidden. This is a deadline, an exclusive community, and a public launch waiting to judge your excuses.</p></div></details>
+      <details class="faq"><summary><h3>How much time do I need each week?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>Enough to move the ship daily. Some pirates have full-time jobs, kids, chaos, and bad Wi-Fi. The rule is progress, not perfect conditions.</p></div></details>
+      <details class="faq"><summary><h3>Can I get a refund?</h3><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__body"><p>If you genuinely asked this, blink twice and start over.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7 · COMMUNITY FOOTER
+     ============================================================ -->
+<section id="community" class="crew-section" data-screen-label="Community">
+  <div class="crew-moon" aria-hidden="true"></div>
+  <div class="cloud cloud-1" style="opacity:.6" aria-hidden="true"></div>
+
+  <header class="crew-head">
+    <h2><span>238</span> people shipping startups</h2>
+    <p class="overboard">4 people thrown overboard</p>
+    <nav class="crew-legal" aria-label="Legal">
+      <a href="#">Terms</a><span class="sep" aria-hidden="true">·</span>
+      <a href="#">Privacy</a><span class="sep" aria-hidden="true">·</span>
+      <span class="cc">© 2026 Ship or Die</span>
+    </nav>
+  </header>
+  <a class="crew-view" href="#">view crew page <span aria-hidden="true">→</span></a>
+
+  <div class="crew-inner">
+    <div class="crew-scene">
+      <div class="crew-ship-wrap">
+        <img class="crew-ship pixel-art" alt="A crew of pirates shipping startups" src="https://www.ship-or-die.com/_next/static/media/ship_crew_3_decks.05ifwz3c3~e~d.png">
+        <div class="crew-deck" id="crewDeck" aria-hidden="true"></div>
+      </div>
+      <img class="crew-shark pixel-art" alt="" src="https://www.ship-or-die.com/images/misc/shark-fin.png">
+      <div class="crew-skulls" aria-hidden="true"><img src="sod/img/blood-skull.png" alt=""><img src="sod/img/blood-skull.png" alt=""><img src="sod/img/blood-skull.png" alt=""><img src="sod/img/blood-skull.png" alt=""><img src="sod/img/blood-skull.png" alt=""><img src="sod/img/blood-skull.png" alt=""></div>
+    </div>
+  </div>
+
+  <div class="crew-wave crew-wave-back" aria-hidden="true"></div>
+  <div class="crew-wave crew-wave-front" aria-hidden="true"></div>
+</section>
+
+</main>
